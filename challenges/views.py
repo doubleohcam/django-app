@@ -35,6 +35,7 @@ def monthly_challenge_by_number(request, month):
 def monthly_challenge(request, month):
     try:
         challenge_text = monthly_challenges[month]
-        return HttpResponse(challenge_text)
+        response_data = f"<h1>{challenge_text}</h1>" #injecting data/code/vars etc
+        return HttpResponse(response_data)
     except:
-        return HttpResponseNotFound("Value not supported!")
+        return HttpResponseNotFound("<h1>Value not supported!</h1>")
