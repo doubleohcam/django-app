@@ -3,6 +3,11 @@ from django.http import HttpResponse, HttpResponseNotFound
 
 # Create your views here.
 
+# only accepts numbers
+def monthly_challenge_by_number(request, month):
+    return HttpResponse(month)
+
+# only accepts strings
 def monthly_challenge(request, month):
     challenge_text = None
 
